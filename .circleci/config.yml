@@ -31,6 +31,9 @@ jobs:
             # Important, change from mount to work on remote docker, see https://github.com/aelsabbahy/goss/pull/271
             # If using machine image you do not need this.
             export GOSS_FILES_STRATEGY=cp
-            ./run-tests.sh junit
+            ./run-tests.sh circleci
       - store_test_results:
           path: reports
+      - store_artifacts:
+          path: reports
+          destination: reports
